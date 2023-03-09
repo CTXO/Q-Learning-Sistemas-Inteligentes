@@ -1,0 +1,32 @@
+No inicio, rodei 8000 iterações com o Gamma em 0.8, alpha em 0.2 e epsilon em 0.3 com a plataforma 16 como plataforma inicial.
+
+Após isso, o agente ainda não conseguia chegar ao destino com confiança, então treinei novamente com 7000 iterações com o Gamma em 0.9,
+alpha em 0.1 e epsilon em 0.05 na mesma plataforam inicial. Diminuí o alpha para que as mudanças na tabela Q fossem mais sutis,
+para que o agente pudesse aprender com mais precisão como chegar ao destino. Como ele já tinha uma ideia básica de como percorrer
+naquela área, também diminui o epsilon, já que não era mais necessário um número grande de movimentos aleatórios para ele
+conhecer o ambiente. Após esse treinamento, o agente conseguia chegar ao destino com confiança. Mesmo quando seu caminho
+era desviado no pulo, ou por uma ação aleatória, quando isso não causava que ele caísse, ele conseguia achar o melhor caminho
+para chegar ao destino. (As vezes ele fazia um giro desnecessário ou pulava uma plataforma a mais sem precisar, mas
+achei melhor treinar ele em outras plataformas, e assumi que esses pequenos erros seriam corrigidos com treinos em plataformas
+mais próximas do início).
+
+Após isso, treinei o agente começando na plataforma 19 para que ele possa aprender a chegar ao destino pelo lado esquedo do mapa.
+Ele foi treinado com as mesmas configurações do primeiro treinamento (8000 iterações, gamma em 0.8, alpha em 0.2 e epsilon em 0.3).
+O agente conseguia chegar ao caminho mas estava dando muitos pulos e giros desnecessários então alterei o alpha para 0.1,
+o epsilon para 0.05 e o gamma para 0.9. Dessa vez, realizei 10_000 iterações (Comecei com 5000 mas não foi o suficiente).
+
+Em seguida, treinei o agente a partir da plataforma 5 e usei as seguintes configurações: 7000 iterações, gamma em 0.9,
+alpha em 0.15 e epsilon em 0.3. O  epsilon está mais elevados pois a plataforma inicial é mais distante do destino, então é bom
+adicionar uma maior aleatoriedade para uma exploração do ambiente que ainda não foi explorado. O alpha está menor pois, com o
+alpha muito grande, ele estava "desaprendendo o caminho feito anteriormente". O agente conseguiu achar o camminho correto após
+todas as iterações.
+
+Depois treinei com as mesmas configurações na plataforma 17 (esquerda). Após 1000 iterações ele conseguiu aprender este caminho.
+
+Depois treinei mais 20_000 iterações na plataforma 1 com as mesmas configurações. Após isso, ele preferiu sempre ir pelo caminho
+da esquerda. Apesar de ser mais perigoso de ele cair, é um caminho mais curto. Como ele não caia muitas vezes, decidiu
+seguir por esse caminho quando começa na plataforma 1.
+
+Em seguida, treinei algumas poucas iterações na plataforma 0 e o agente logo aprendeu a chegar ao destino, indo pelo lado
+esquerdo.
+
